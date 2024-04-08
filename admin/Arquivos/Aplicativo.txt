@@ -1,0 +1,70 @@
+1 Nome aluno
+2 ativo
+3 Bairro
+4 CEP
+5 CIDADE	
+6 CNPJ
+7 complemento
+8 Curso
+9 Data do cadastro
+10 Email instituição
+11 E-mail aluno
+12 Etapa
+13 Hora do cadastro
+14 idinstituição
+15 idsegmento
+16 Nome instituoição
+17 endereço
+18 Número do endereço
+19 Pessoas
+20 Responsável
+21 site
+22 telefone instituicao
+23
+24
+25
+
+
+	
+5,3
+
+
+
+3, 5, 10, 18
+
+
+//pega o id e nome do usuÃ¡rio
+		$idusuario = $linha->idusuario;
+		$usuario = $linha->usuario;
+		//gera uma nova senha aleatÃ³ria no intervalo abaixo
+		$senha = rand(10000000,99999999);	
+		//prepara e-mail
+		$email_remetente = "app@wpinfor.com";
+		$email_destinatario = $email;
+		$email_reply = $email_remetente;
+		$email_assunto = "Nova senha de acesso para o aplicativo";
+		$email_conteudo = "Prezado(a) $usuario \n\n\n\n";
+		$email_conteudo .= "Segue abaixo a senha para acessar o aplicativo:\n\n\n ";
+		$email_conteudo .= $senha;
+		$email_conteudo .= "\n\n\nAPP - http://app.wpinfor.com";
+		//monta o cabeÃ§alho do email
+		$email_headers = "MIME-Version: 1.1\n";
+		$email_headers .= "Content-type: text/html; charset=utf-8\n";
+		$email_headers .= "From: $email_remetente\n";
+		$email_headers .= "Return-Path: $email_remetente\n";
+		$email_headers .= "Reply-To: $email_remetente\n";	
+		//envia o email usando a funÃ§Ã£o mail()
+		if (mail($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){
+			//altera a senha na tabela
+			$sql = "UPDATE tbusuario SET senha = :senha WHERE idusuario = :idusuario;";
+			$stmt = Conecta::abrirConexao()->prepare($sql);
+			$stmt->bindValue(':senha', sha1($senha));
+			$stmt->bindValue(':idusuario', $idusuario);
+			if ($stmt->execute()){
+				echo "OK";
+				}else{
+				echo "Erro ao alterar";
+			}
+		}else{
+			echo "Erro ao enviar e-mail";
+		}
