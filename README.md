@@ -1,56 +1,48 @@
-# Sistema de Cadastro de Alunos
+# Sistema de Gerenciamento Escolar
 
-Este projeto é uma aplicação web para realizar o cadastro de alunos, desenvolvido com o objetivo de facilitar o gerenciamento de informações estudantis. Ele utiliza uma interface responsiva e integrada com a API ViaCEP para preenchimento automático de endereços com base no CEP.
+Este sistema é uma aplicação web robusta para o gerenciamento de informações escolares, incluindo alunos, professores, turmas, disciplinas, faltas e notas. Ele oferece funcionalidades avançadas para facilitar a administração de escolas e a interação entre alunos e professores.
 
 ## Funcionalidades
 
-- Cadastro de alunos com campos como:
-  - Nome completo, data de nascimento, CPF, RG, matrícula.
-  - Endereço completo (logradouro, número, complemento, bairro, cidade, estado, CEP).
-  - Informações dos pais ou responsáveis.
-  - Contato (telefone, e-mail) e credenciais de acesso (usuário e senha).
-- Preenchimento automático do endereço com a API [ViaCEP](https://viacep.com.br/).
-- Mensagens de alerta para confirmação de sucesso ou erro no cadastro.
+### Cadastro
+- **Alunos: Registro completo com dados pessoais e acadêmicos.
+- **Professores:** Inclusão de informações pessoais e profissionais.
+- **Disciplinas:** Adição de matérias ofertadas pela escola.
+- **Turmas:** Criação de turmas e organização de classes.
+
+### Vinculação
+
+- Alunos e professores podem ser associados às turmas.
+- Disciplinas podem ser vinculadas às turmas específicas.
+
+### Gestão Acadêmica
+- Lançamento de faltas e notas dos alunos por disciplina.
+- Exibição de históricos escolares detalhados.
+
+### Comunicação e Painel Inicial
+- Sistema para publicar avisos e notificações no painel principal.
+
+### Interfaces Específicas
+- **Aluno:** Consulta de dados pessoais, faltas e notas.
+- **Administração:** Ferramentas para gerenciar todo o sistema escolar.
 
 ## Tecnologias Utilizadas
+- **Frontend:** HTML, CSS, SCSS, JavaScript.
+- **Backend:** PHP.
+- **Bibliotecas e APIs:** jQuery, integração com a API ViaCEP para preenchimento automático de endereços.
 
-- **Frontend:**
-  - HTML, CSS, SCSS
-  - JavaScript
-- **Backend:**
-  - PHP
-- **Bibliotecas e APIs:**
-  - jQuery para manipulação DOM e requisições AJAX.
-  - API ViaCEP para consulta de endereços.
-
-## Estrutura do Projeto
-
-- **Arquivos principais:**
-  - `cadastrar_aluno.php`: Página principal para o cadastro de alunos.
-  - `cabecalho.php` e `rodape.php`: Componentes reutilizáveis para o cabeçalho e rodapé da aplicação.
-  - `cadastra_aluno.php`: Arquivo responsável por processar e armazenar os dados do formulário no banco de dados.
-- **Recursos:**
-  - Máscaras de entrada para CPF, RG, CEP, telefone, etc.
-  - Validação e limpeza automática de campos quando necessário.
-
-## Como Usar
-
-1. Clone este repositório em sua máquina local:
-   ```bash
-   git clone https://github.com/seu_usuario/nome_do_repositorio.git
-   ```
-2. Certifique-se de que você possui um servidor web com suporte a PHP configurado (como XAMPP ou WAMP).
-3. Abra o arquivo cadastrar_aluno.php no navegador através do servidor.
-4. Preencha os campos necessários e clique em "Cadastrar".
+## Estrutura do Sistema
+- **Painel Administrativo:** Para gerenciar usuários, turmas, disciplinas e lançamentos acadêmicos.
+- **Painel do Aluno:** Para visualização de informações pessoais, faltas e notas.
+- **Banco de Dados:** Organizado para relacionar alunos, professores, disciplinas e turmas.
 
 ## Requisitos do Sistema
-- Servidor web com PHP (versão 7.4 ou superior).
-- Conexão ativa com a internet para o uso da API ViaCEP.
+- Servidor web com suporte a PHP (versão 7.4 ou superior).
+- Banco de dados SQL configurado e conectado.
+- Conexão ativa com a internet para integração com APIs.
 
-## Observações
-- O projeto está em desenvolvimento e pode incluir funcionalidades adicionais no futuro, como autenticação, relatórios e exportação de dados.
-- Caso o endereço não seja encontrado, verifique o formato do CEP e tente novamente.
+## Autor
+Bruno
+Contato: brunoh_123@hotmail.com
 
-## Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias e sugestões.
+Sugestões e contribuições são bem-vindas!
