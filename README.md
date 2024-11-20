@@ -42,7 +42,6 @@ Este sistema é uma aplicação web robusta para o gerenciamento de informaçõe
 - Conexão ativa com a internet para integração com APIs.
 
 ## Autor
-Bruno
 Contato: brunoh_123@hotmail.com
 
 Sugestões e contribuições são bem-vindas!
