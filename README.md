@@ -5,7 +5,7 @@ Este sistema é uma aplicação web robusta para o gerenciamento de informaçõe
 ## Funcionalidades
 
 ### Cadastro
-- **Alunos: Registro completo com dados pessoais e acadêmicos.
+- **Alunos:** Registro completo com dados pessoais e acadêmicos.
 - **Professores:** Inclusão de informações pessoais e profissionais.
 - **Disciplinas:** Adição de matérias ofertadas pela escola.
 - **Turmas:** Criação de turmas e organização de classes.
